@@ -4,6 +4,13 @@ from scipy.optimize import minimize
 import matplotlib.pyplot as plt
 import gradio as gr
 import tempfile
+
+
+import os
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import StandardScaler
+import statsmodels.api as sm
 def main(file):
     df=pd.read_excel(file)
     N=20 # 分割的份数

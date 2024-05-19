@@ -2,8 +2,12 @@ import pandas as pd
 import numpy as np
 from scipy.optimize import minimize
 import matplotlib.pyplot as plt
+import scipy.interpolate as sci
 import gradio as gr
 import tempfile
+
+
+
 def main(file):
     df=pd.read_excel(file)
     N=20 # 分割的份数
@@ -378,6 +382,10 @@ def main(file):
 gr.Interface(
     main, 
     inputs="file",  # 使用文件上传作为输入
+    # outputs=[
+    #     "image", "image", "image",
+    #     "image", "image", "image"
+    # ],  
     outputs=gr.Gallery(),
     title="Mean-Variance Optimization including ESG Information",
     description="Upload an Excel or CSV file and get the DataFrame. The file should have columns ['id','year','esg_score','return']",

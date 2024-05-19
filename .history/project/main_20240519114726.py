@@ -4,6 +4,9 @@ from scipy.optimize import minimize
 import matplotlib.pyplot as plt
 import gradio as gr
 import tempfile
+
+
+
 def main(file):
     df=pd.read_excel(file)
     N=20 # 分割的份数
